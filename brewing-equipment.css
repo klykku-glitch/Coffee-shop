@@ -1,0 +1,110 @@
+        /* ဒုတိယ Design အသစ်အတွက် ထပ်တိုး CSS */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            width: 320px;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .title-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #6d4c41;
+            font-size: 1.1rem;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            min-height: 40px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #6d4c41; /* ဒုတိယပုံထဲက ကော်ဖီရောင် */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: auto; /* အမြဲတမ်း အောက်ခြေမှာ ကပ်နေစေဖို့ */
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #4e342e;
+        }
+
+        /* Cart Count Style */
+        #cart-count {
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+        .cart-wrapper { position: relative; }
+
+
+        /*map*/
+        .map-container {
+    width: 90%;        /* ဘေးတစ်ဖက်တစ်ချက်စီမှာ ၅% စီ ခွာထားမယ် */
+    margin: 0 auto;    /* အလယ်တည့်တည့် ရောက်အောင်လုပ်မယ် */
+    border: 5px solid #6d4c41; /* ကော်ဖီရောင် ဘောင်လေးခတ်မယ် */
+    border-radius: 15px;       /* ထောင့်လေးတွေကို ဝိုင်းပေးမယ် */
+    overflow: hidden;          /* ဝိုင်းသွားတဲ့ထောင့်ထဲကနေ map ထွက်မလာအောင် */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* အရိပ်လေး ထည့်မယ် */
+    margin-bottom: 50px;
+}
+
+.map-container iframe {
+    display: block; /* အောက်ခြေမှာ စာလုံးအပိုနေရာ မကျန်အောင် */
+}
+/*map*/

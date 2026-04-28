@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop - Login</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+  
+    <div class="container">
+        <h1>WELCOME</h1>
+  
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <p id="error-msg">Gmail or Password is wrong!</p>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="remember-box">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot password</a>
+        </div>
+
+        <div class="logos">
+            <i class="fab fa-microsoft"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-google"></i>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            const validEmail = "admin@gmail.com";
+            const validPassword = "password123";
+
+            if (email === validEmail && password === validPassword) {
+                alert("Login Success!");
+                window.location.href = "home.html"; 
+            } else {
+                errorMsg.style.display = "block";
+                
+                // မှားတဲ့အချိန်မှာ Input Box တွေကို မျဉ်းနီလေးဖြစ်အောင်လုပ်ခြင်း
+                document.getElementById('email').style.border = "2px solid #ff4d4d";
+                document.getElementById('password').style.border = "2px solid #ff4d4d";
+            }
+        });
+    </script>
+
+</body>
+</html>

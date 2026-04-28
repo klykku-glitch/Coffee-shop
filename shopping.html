@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Coffee Shop</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+     <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-Offers-and-subscriptions.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+    <div class="cart-container">
+        <div class="cart-items-section">
+            <h2>Shopping Cart</h2>
+            <div id="cart-list"></div> <br>
+            <button onclick="clearCart()" style="color: red; cursor: pointer; border: none; background: none;">Clear Cart</button>
+        </div>
+
+        <div class="order-summary-section">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span>Subtotal: </span>
+                <span id="subtotal">0.00</span> $
+            </div>
+            <div class="summary-row total-row">
+                <b><span>Total: </span></b>
+                <b><span id="final-total">0.00</span> $</b>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+<script>
+    // ၁။ Cart ထဲက ပစ္စည်းတွေကို ဆွဲထုတ်ပြမည့် Function
+    function displayCart() {
+        // localStorage ထဲက data ကိုယူမယ်
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        const cartList = document.getElementById('cart-list');
+        const subtotalElement = document.getElementById('subtotal');
+        const totalElement = document.getElementById('final-total');
+
+        if (cart.length === 0) {
+            cartList.innerHTML = "<h2>Your Cart is Empty</h2>";
+            subtotalElement.innerText = "0.00";
+            totalElement.innerText = "0.00";
+            updateBadge();
+            return;
+        }
+
+        cartList.innerHTML = "";
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+            let itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            // အရေးကြီးဆုံးအချက် - item.image အစား item.img ကို သုံးထားလို့ ပုံပြန်ပေါ်လာမှာပါ
+            cartList.innerHTML += `
+                <div class="cart-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding: 10px;">
+                    <img src="${item.img}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;" onerror="this.src='placeholder.jpg'">
+                    
+                    <div style="flex: 1; margin-left: 15px;">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)}</p>
+                    </div>
+                    
+                    <div class="quantity-controls" style="display: flex; align-items: center; gap: 10px; margin: 0 20px;">
+                        <button onclick="changeQty(${index}, -1)" style="cursor:pointer; width: 25px;">-</button>
+                        <span style="font-weight:bold;">${item.quantity}</span>
+                        <button onclick="changeQty(${index}, 1)" style="cursor:pointer; width: 25px;">+</button>
+                    </div>
+
+                    <div style="text-align: right; min-width: 80px;">
+                        <b>$${itemTotal.toFixed(2)}</b><br>
+                        <button onclick="removeItem(${index})" style="background:none; border:none; cursor:pointer; color:red; margin-top:5px;">🗑️</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        subtotalElement.innerText = subtotal.toFixed(2);
+        totalElement.innerText = subtotal.toFixed(2);
+        updateBadge();
+    }
+
+    // ၂။ အရေအတွက် တိုး/လျှော့ လုပ်သည့် Function
+    function changeQty(index, amount) {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        cart[index].quantity += amount;
+        
+        if (cart[index].quantity < 1) {
+            removeItem(index); // ၁ အောက်လျော့ရင် ဖျက်မယ်
+            return;
+        }
+        
+        localStorage.setItem('myCoffeeCart', JSON.stringify(cart));
+        displayCart();
+    }
+
+    // ၃။ ပစ္စည်းတစ်ခုချင်းစီ ဖျက်သည့် Function
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('myCoffeeCart', JSON.stringify(cart));
+        displayCart();
+    }
+
+    // ၄။ Cart တစ်ခုလုံး ရှင်းသည့် Function
+    function clearCart() {
+        if(confirm("Are you sure you want to clear the cart?")) {
+            localStorage.removeItem('myCoffeeCart');
+            displayCart();
+        }
+    }
+
+    // ၅။ Cart Icon ပေါ်က ဂဏန်း Update လုပ်သည့် Function
+    function updateBadge() {
+        const cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const badge = document.getElementById('cart-count');
+        if (badge) {
+            badge.innerText = total;
+            badge.style.display = total > 0 ? "flex" : "none";
+        }
+    }
+
+    // စာမျက်နှာ စပွင့်တာနဲ့ function ကို စတင်ခိုင်းမယ်
+    window.onload = displayCart;
+    
+</script>
+</body>
+</html>

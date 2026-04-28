@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops - Coffee Shop</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+    
+    
+</head>
+<body>
+
+     <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-Offers-and-subscriptions.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+
+
+
+    <header class="event-header">
+        <h1>Events & Workshops</h1>
+        <p>Uncover the secrets of the perfect brew with our master baristas.</p>
+    </header>
+
+    <main class="event-grid" id="event-display">
+        </main>
+
+  <script>
+    // ၁။ Workshop အချက်အလက်များ
+    const eventData = [
+        {
+            title: "Latte Art Masterclass",
+            date: "May 15, 2026",
+            desc: "Learn to pour hearts, rosettas, and tulips like a pro barista.",
+            price: "$25.00",
+            img: "coffee art master.jpg"
+        },
+        {
+            title: "Home Brewing Basics",
+            date: "May 22, 2026",
+            desc: "Master French Press, V60, and AeroPress techniques at home.",
+            price: "$15.00",
+            img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+        },
+        {
+            title: "Coffee Roasting Tour",
+            date: "June 05, 2026",
+            desc: "Discover the journey from green bean to aromatic roast.",
+            price: "FREE",
+            img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500"
+        },
+        {
+            title: "Coffee Tasting & Cupping",
+            date: "June 12, 2026",
+            desc: "Identify different coffee notes like a professional taster.",
+            price: "$20.00",
+            img: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=500"
+        },
+        {
+            title: "Advanced Latte Art (Lvl 2)",
+            date: "June 20, 2026",
+            desc: "Swan designs and etching techniques for enthusiasts.",
+            price: "$35.00",
+            img: "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?w=500"
+        },
+        {
+            title: "Espresso Machine DIY",
+            date: "July 01, 2026",
+            desc: "Hands-on guide to maintaining your home espresso machine.",
+            price: "$10.00",
+            img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500"
+        }
+    ];
+
+    // ၂။ Workshop Card များ ထုတ်ပေးခြင်း
+    function renderEvents() {
+        const container = document.getElementById('event-display');
+        if (!container) return; 
+        container.innerHTML = "";
+
+        eventData.forEach(event => {
+            container.innerHTML += `
+                <div class="event-card">
+                    <div class="event-date-badge">${event.date}</div>
+                    <div class="event-img-container">
+                        <img src="${event.img}" alt="${event.title}">
+                    </div>
+                    <div class="event-info">
+                        <div class="title-price">
+                            <h3>${event.title}</h3>
+                            <span class="price">${event.price}</span>
+                        </div>
+                        <p>${event.desc}</p>
+                        <button class="join-btn" onclick="openModal('${event.title}')">JOIN NOW</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    // ၃။ Register Form (Modal) ဖွင့်ခြင်း
+    function openModal(workshopName) {
+        const modal = document.getElementById('registerModal');
+        const workshopText = document.getElementById('selected-workshop');
+        if (modal && workshopText) {
+            modal.style.display = "block";
+            workshopText.innerText = "Joining: " + workshopName;
+        }
+    }
+
+    // ၄။ Register Form (Modal) ပိတ်ခြင်း
+    function closeModal() {
+        const modal = document.getElementById('registerModal');
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // ၅။ Cart Count Update လုပ်ခြင်း
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+        let countElement = document.getElementById('cart-count');
+        if (countElement) {
+            countElement.innerText = totalCount;
+            countElement.style.display = totalCount > 0 ? "flex" : "none";
+        }
+    }
+
+    // ၆။ Window Load ဖြစ်ချိန်တွင် အားလုံးကို Run ခြင်း
+    window.onload = function() {
+        renderEvents();
+        updateCartCount();
+    };
+
+    // ၇။ Popup အပြင်ဘက်ကို နှိပ်လျှင် ပိတ်သွားစေရန်
+    window.onclick = function(event) {
+        const modal = document.getElementById('registerModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Workshop Registration</h2>
+        <p id="selected-workshop" style="color: #6d4c41; font-weight: bold;"></p>
+        <form id="regForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <button type="submit" class="sub-btn">Confirm Registration</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

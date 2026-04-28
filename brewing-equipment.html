@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Coffee Shop</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="brewing-equipment.css">
+    
+</head>
+
+<body>
+    <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-Offers-and-subscriptions.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+    <section class="product-section">
+        <div class="selection-header">
+            <h2 class="section-title">OUR BEST CHOICE</h2>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search coffee name...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <div id="product-list" class="product-container"></div>
+    </section>
+
+   <script>
+    // ၁။ Product List (ပုံနာမည်နဲ့ Extension .jpg/.png မှန်မမှန် ပြန်စစ်ပေးပါ)
+    const coffeeProducts = [
+        { id: 1, name: "Automatic Drip Coffee Makers", price: 2.00, img: "Automatic Drip Coffee Makers.jpg", desc: "Perfect brew, every single time" },
+        { id: 2, name: "Espresso Machines", price: 2.00, img: "Espresso Machines.jpg", desc: "Rich, bold, and perfectly concentrated" },
+        { id: 3, name: "AeroPress", price: 2.00, img: "AeroPress.jpg", desc: "Versatile brewing for the ultimate flavor" },
+        { id: 4, name: "Cold Brew System", price: 2.00, img: "Cold Brew System.jpg", desc: "Smooth, refreshing, and low acidity" },
+        { id: 5, name: "French Press", price: 2.00, img: "French Press.jpg", desc: "Full-bodied taste in every plunger" },
+        { id: 6, name: "Stovetop Moka Pot", price: 2.00, img: "Stovetop  Moka Pot.jpg", desc: "Classic Italian-style espresso at home" },
+        { id: 7, name: "Vaccum Siphon Brewer", price: 2.00, img: "Vacuum  Siphon Brewer.jpg", desc: "A theatrical brew with crystal-clear taste" },
+        { id: 8, name: "Single-Serve Pod Machines", price: 2.00, img: "Single-Serve Pod Machines.jpg", desc: "Quality coffee at the touch of a button" },
+        { id: 9, name: "Pour-Over", price: 2.00, img: "Pour-Over.jpg", desc: "Artisanal brewing for a clean, crisp cup" }
+    ];
+
+    const productList = document.getElementById('product-list');
+    const searchInput = document.getElementById('searchInput');
+
+    // ၂။ ပစ္စည်းများပြသခြင်း (Layout ကို ဒုတိယပုံစံအတိုင်း သေသပ်အောင်လုပ်ထားသည်)
+    function displayProducts(products) {
+        productList.innerHTML = ""; 
+        
+        if (products.length === 0) {
+            productList.innerHTML = "<p style='width:100%; text-align:center;'>No products found!</p>";
+            return;
+        }
+
+        products.forEach(item => {
+            productList.innerHTML += `
+                <div class="product-card">
+                    <img src="${item.img}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
+                    <div class="product-info">
+                        <div class="title-price-row">
+                            <h3 class="product-title">${item.name}</h3>
+                            <span class="product-price">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <p class="product-desc">${item.desc}</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.img}')">ADD TO CART</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    // ၃။ Search လုပ်ဆောင်ချက်
+    searchInput.addEventListener('input', (e) => {
+        const searchText = e.target.value.toLowerCase();
+        const filteredProducts = coffeeProducts.filter(product => 
+            product.name.toLowerCase().includes(searchText)
+        );
+        displayProducts(filteredProducts);
+    });
+
+    // ၄။ Add to Cart (Alert မပါဘဲ localStorage ထဲသို့ img ပါ ထည့်သိမ်းပေးသည်)
+    function addToCart(id, name, price, img) {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        
+        const existingItem = cart.find(item => item.id === id);
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            // img ကိုပါ ထည့်သိမ်းမှ shopping.html မှာ ပုံပြန်ပေါ်မှာဖြစ်သည်
+            cart.push({ id, name, price, img, quantity: 1 });
+        }
+
+        localStorage.setItem('myCoffeeCart', JSON.stringify(cart));
+        updateCartCount();
+        
+        // Alert ပေါ်တာ မကြိုက်လို့ ပိတ်ထားပေးပါတယ်ဗျာ။ 
+        // console.log(name + " added to cart"); 
+    }
+
+    // ၅။ Cart Count (အနီရောင်စက်ဝိုင်းလေးထဲက ဂဏန်းကို update လုပ်သည်)
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+        let countElement = document.getElementById('cart-count');
+        
+        if (countElement) {
+            countElement.innerText = totalCount;
+            // ဂဏန်းရှိမှသာ အနီရောင်စက်ဝိုင်းလေး ပေါ်မည်
+            countElement.style.display = totalCount > 0 ? "inline-block" : "none";
+        }
+    }
+
+    // စာမျက်နှာ စတင်ဖွင့်ချိန်တွင် အချက်အလက်များ ပြသရန်
+    window.onload = function() {
+        displayProducts(coffeeProducts);
+        updateCartCount();
+    }; 
+</script>
+</body>
+</html>

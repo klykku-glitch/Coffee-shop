@@ -1,0 +1,84 @@
+.container {
+  text-align: center;
+  width: 350px;       
+    padding: 20px;      
+    border: 1px solid #6F4E37;
+    border-radius: 8px;
+border: 1px solid black; 
+border-radius: 50px;
+background-color: #6F4E37; 
+
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  
+}
+
+.form-group input {
+  width: 250px;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #6F4E37;
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 20px;
+}
+
+.remember-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.remember-box input {
+  margin-right: 5px;
+}
+
+.logos {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 28px;
+}
+body {
+    margin: 0;               
+    display: flex;              
+    justify-content: center;   
+    align-items: center;       
+    height: 100vh;  
+    border-radius: 10px;;
+    background-color: #f5f5dc;
+    background-image: url(frame-made-of-roasted-coffee-beans-on-black-table-top-view-free-photo-removebg-preview.png) ;
+    /* ပုံကို တစ်ပုံတည်းပဲ ပေါ်စေဖို့ */
+    background-repeat: no-repeat;
+
+    /* ပုံကို Screen အပြည့် ကွက်တိ ဖြစ်စေဖို့ */
+    background-size: cover;
+
+    /* ပုံကို အမြဲတမ်း အလယ်မှာ ရှိနေစေဖို့ */
+    background-position: center;
+
+    /* Screen အမြင့်အပြည့် ယူဖို့ (မပါသေးရင် ထည့်ပါ) */
+    height: 100vh;
+    width: 100%;
+  
+  }      
+
+button {
+  border-radius: 20px;
+  background-image: url(images.jpg);
+  color: white;  
+
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Subscriptions - Coffee Shop</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+    
+   
+</head>
+<body>
+
+   <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-Offers-and-subscriptions.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+
+    <h2 class="section-title">Special Offers</h2>
+    <div class="offers-container">
+        <div class="offer-card">
+            <div class="discount-tag">20% OFF</div>
+            <div class="offer-info">
+                <h3>Morning Brew Special</h3>
+                <p>Enjoy discount on all Americano orders before 10 AM.</p>
+                <span class="promo-code">CODE: COFFEE20</span>
+                <button class="sub-btn">Claim Offer</button>
+            </div>
+        </div>
+        <div class="offer-card">
+            <div class="discount-tag">FREE</div>
+            <div class="offer-info">
+                <h3>Buy 2 Get 1 FREE</h3>
+                <p>Order any 2 Espresso machines and get a coffee bag free.</p>
+                <span class="promo-code">No Code Required</span>
+                <button class="sub-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #f3e5f5; padding-top: 10px;">
+        <h2 class="section-title">Choose Your Subscription Plan</h2>
+        <div class="sub-container">
+            <div class="sub-card">
+                <h3>Basic Learner</h3>
+                <div class="sub-price">$15<span>/mo</span></div>
+                <ul class="sub-features">
+                    <li><i class="fas fa-check"></i> 2 Free Coffees per month</li>
+                    <li><i class="fas fa-check"></i> 5% Discount on Beans</li>
+                    <li><i class="fas fa-check"></i> Monthly Newsletter</li>
+                </ul>
+                <button class="sub-btn">Subscribe</button>
+            </div>
+
+            <div class="sub-card popular">
+                <div style="background: #6d4c41; color: white; border-radius: 10px; font-size: 10px; padding: 2px; margin-bottom: 10px;">MOST POPULAR</div>
+                <h3>Coffee Lover</h3>
+                <div class="sub-price">$35<span>/mo</span></div>
+                <ul class="sub-features">
+                    <li><i class="fas fa-check"></i> 8 Free Coffees per month</li>
+                    <li><i class="fas fa-check"></i> 15% Discount on Beans</li>
+                    <li><i class="fas fa-check"></i> 1 Free Workshop per year</li>
+                </ul>
+                <button class="sub-btn" style="background: #6d4c41;">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+        let countElement = document.getElementById('cart-count');
+        if (countElement) {
+            countElement.innerText = totalCount;
+            countElement.style.display = totalCount > 0 ? "flex" : "none";
+        }
+    }
+    window.onload = updateCartCount;
+    </script>
+</body>
+</html>

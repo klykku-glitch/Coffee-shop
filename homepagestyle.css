@@ -1,0 +1,1774 @@
+.container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%; /* ခြင်းတောင်းနဲ့ စာသားတွေ မကျပ်အောင် padding လျှော့ထားတယ် */
+    background-color: #E2CEB1; /* Nav bar အရောင် */
+    flex-wrap: wrap; /* Screen သေးရင် စာသားတွေ အောက်ဆင်းပေးဖို့ */
+}
+
+.nav-links-1 {
+    display: flex;
+    list-style: none;
+    gap: 12px; /* စာသားတွေ အကုန်ဆံ့ဖို့ gap လျှော့ထားတယ် */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links-1 a {
+    text-decoration: none;
+    color: #fdf5e6; 
+    font-weight: bold;
+    font-size: 13px; /* စာလုံးအရွယ်အစား */
+    white-space: nowrap; 
+}
+/* row bar*/
+/* Login Button ကို Button ပုံစံဖြစ်အောင် ပြင်ခြင်း */
+.login-btn {
+    display: inline-block;    /* ဒါမှ Padding နဲ့ Width/Height တွေ အလုပ်လုပ်မှာပါ */
+    background-color: #6d4c41; /* ကော်ဖီရောင် (မင်းကြိုက်တဲ့အရောင် ပြောင်းလို့ရတယ်) */
+    color: black !important;   /* စာသားအရောင် အဖြူ */
+    padding: 10px 20px;        /* ဘေးပတ်ပတ်လည် အကွာအဝေး */
+    text-decoration: none;     /* စာသားအောက်က မျဉ်းတားကို ဖျောက်ခြင်း */
+    border-radius: 5px;        /* ထောင့်လေးတွေကို အနည်းငယ် ဝိုင်းစေရန် */
+    font-weight: bold;         /* စာသားကို အထူထားရန် */
+    transition: background 0.3s ease; /* Mouse တင်ရင် အရောင်ပြောင်းတာ ညင်သာစေရန် */
+    border: none;              /* ဘောင်ဖျောက်ခြင်း */
+    cursor: pointer;           /* Mouse တင်ရင် လက်ညှိုးပုံပေါ်စေရန် */
+}
+
+
+
+
+/*sing in button*/
+
+button {
+    border-radius: 30px;
+    border: 1px solid #2c1a0f; /* ဘောင်ကို ကော်ဖီရင့်ရောင် သုံးပါ */
+    padding: 8px 25px;
+    background-color: transparent;
+    color: #2c1a0f;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #2c1a0f;
+    color: white; /* Mouse တင်ရင် အရောင်ပြောင်းသွားအောင်လို့ပါ */
+}
+
+/*sing in button*/
+
+.item-2{
+    display: flex;
+    gap: 10px;
+    
+}
+.small-icon{
+    width: 100px ;
+    height: auto;
+    margin: 72px;
+}
+.item-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 100px;
+    margin-left: 8%;
+}
+.item-1 h1{
+    margin-bottom: 20px;
+}
+.item-1 p{
+    max-width: 600px;
+    margin-bottom: 30px;
+
+}
+
+/*shop button*/
+
+/* Shop Now Button ကို Button ပုံစံဖြစ်အောင် ပြင်ခြင်း */
+.shop-now-btn {
+    display: inline-block;    /* ဒါမှ Padding နဲ့ နေရာယူမှု မှန်မှာပါ */
+    background-color: #6d4c41; /* ကော်ဖီရောင် */
+    color: white !important;   /* စာသားအရောင် အဖြူ */
+    padding: 12px 30px;        /* Button အရွယ်အစား (အပေါ်အောက် ၁၂၊ ဘေးဘယ်ညာ ၃၀) */
+    text-decoration: none;     /* စာသားအောက်က မျဉ်းတားဖျောက်ရန် */
+    border-radius: 50px;       /* ဘေးဘောင်တွေကို လုံးဝိုင်းသွားစေရန် (Capsule Shape) */
+    font-weight: 600;          /* စာသားကို အနည်းငယ် ထူထားရန် */
+    font-size: 16px;           /* စာလုံးအရွယ်အစား */
+    transition: all 0.3s ease; /* Mouse တင်ရင် ပြောင်းလဲမှု ညင်သာစေရန် */
+    border: 2px solid #6d4c41; /* အပြင်ဘောင် အရောင် */
+    text-align: center;
+    margin-top: 20px;          /* အပေါ်က စာသားနဲ့ ခွာရန် */
+}
+
+/* Mouse တင်လိုက်တဲ့အခါ (Hover Effect) */
+.shop-now-btn:hover {
+    background-color: transparent; /* နောက်ခံအရောင် ဖျောက်လိုက်မယ် */
+    color: #6d4c41 !important;     /* စာသားကို ကော်ဖီရောင် ပြောင်းမယ် */
+    transform: translateY(-3px);   /* Mouse တင်ရင် Button လေး အပေါ်နည်းနည်း ကြွတက်လာမယ် */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* အရိပ်လေး ပါလာမယ် */
+}
+
+/*shop button*/
+body {
+    
+
+    margin: 0; /* padding/margin ပိုနေတာတွေ မရှိအောင် */
+    background-color: #fdf5e6; /* ဒါက ပုံထဲကလို Cream ရောင်လေးပါ */
+    min-height: 100vh;
+
+    
+}
+.nav-links{
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+}
+
+/*home page JS*/
+/* --- Footer အခြေခံ Setup --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff !important;
+    padding: 60px 0 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+}
+
+/* --- ၁။ အစက်ဖျောက်ခြင်း (သီးသန့်) --- */
+.footer-col ul {
+    list-style: none !important;      /* အစက်ဖျောက်ရန် */
+    list-style-type: none !important; 
+    margin: 0 !important;
+}
+
+.footer-col ul li {
+    list-style: none !important;
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #6d4c41 !important; /* Mouse တင်ရင် ကော်ဖီရောင်ပြောင်းမယ် */
+}
+
+/* --- ၂။ ဘေးခွာခြင်း (သီးသန့်) --- */
+.footer-col ul {
+    padding-left: 20px !important; /* စာသားကို ညာဘက်သို့ ၂၀ pixels ခွာခြင်း */
+}
+
+/* --- ၃။ Email Bar (Capsule Style အဖြူရောင်) --- */
+.newsletter {
+    display: flex !important;
+    align-items: center !important;
+    background: #ffffff !important; /* Bar တစ်ခုလုံး အဖြူရောင် */
+    border-radius: 50px !important; /* လုံးဝဝိုင်းသွားစေရန် */
+    padding: 5px !important;
+    margin-top: 20px;
+    max-width: 300px;
+}
+
+.newsletter input {
+    flex: 1 !important;
+    border: none !important;
+    background: transparent !important;
+    color: #333333 !important;
+    outline: none !important;
+    padding: 10px 15px !important;
+    font-size: 14px;
+}
+
+.newsletter button {
+    background: #6d4c41 !important; /* Button အရောင် */
+    color: #ffffff !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important; /* Button လေးပါ ဝိုင်းသွားအောင် */
+    cursor: pointer !important;
+    transition: 0.3s;
+}
+
+.newsletter button:hover {
+    background: #4e342e;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-icons a i {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/*home page JS*/
+
+/* 1. Footer Section - စာသားအားလုံး အဖြူရောင်ပြောင်းရန် */
+/* General Body & Footer Text Color */
+body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+/* Journey Section - ဘေးတိုက် Scroll */
+.coffee-journey {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    overflow-x: auto;
+}
+.journey-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.journey-step {
+    flex: 0 0 280px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.journey-step img { width: 100px; }
+
+
+/* home page */
+
+/* link code*/
+
+/* li ထဲက a tag ကို တိုက်ရိုက် ပြင်တာပါ */
+.nav-links-1 li a {
+    text-decoration: none !important; /* မျဉ်းတား အတင်းဖျောက်မယ် */
+    color: black !important;          /* စာသားအရောင် အနက်ပြောင်းမယ် */
+    display: inline-block;            /* နေရာလွတ်တွေ အလုပ်လုပ်အောင်လို့ပါ */
+}
+
+/* Mouse တင်ရင် အရောင်ပြောင်းချင်ရင် (Optional) */
+.nav-links-1 li a:hover {
+    color: #6F4E37 !important;        /* ကော်ဖီရောင်လေး ပြောင်းသွားမယ် */
+}
+/* Singin / Register ခလုတ်ထဲက မျဉ်းတားကို အတင်းဖျောက်ခြင်း */
+button a, 
+.login-btn a,
+button {
+    text-decoration: none !important;
+}
+
+/* Link tag အတွက် သီးသန့် selector */
+a {
+    text-decoration: none !important;
+}
+
+
+/* link code*/
+/* product page*/
+
+
+
+.product-section {
+    padding: 50px 8%;
+    text-align: center;
+    background-color: #fdf5e6; /* နောက်ခံအရောင်နုနုလေး */
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #4b2c20;
+}
+
+/* Card တွေကို ဘေးတိုက်စီတာ */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Screen သေးရင် အောက်ဆင်းသွားအောင် */
+}
+
+/* Card တစ်ခုချင်းစီရဲ့ ပုံစံ */
+.product-card {
+    background: white;
+    width: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* အရိပ်လေးထည့်တာ */
+    text-align: left;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Mouse တင်ရင် အပေါ်ကြွလာမယ် */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* ပုံမရှုံ့သွားအောင် */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    color: #4b2c20;
+}
+
+.price {
+    font-weight: bold;
+    color: #6f4e37;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #ffa500;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #4b2c20;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    float: right; /* ညာဘက်ပို့တာ */
+}
+/* product page*/
+
+
+
+
+
+/*shopping page*/
+/* အဓိက ဘယ်/ညာ ခွဲတဲ့အပိုင်း */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;          /* ဘယ်နဲ့ညာကြား အကွာအဝေး */
+    padding: 40px 8%;
+    font-family: Arial, sans-serif;
+}
+
+/* ဘယ်ဘက်က ပိုကျယ်အောင် flex: 2 ပေးထားတယ် */
+.cart-items-section {
+    flex: 2;
+}
+
+/* ညာဘက် ငွေရှင်းဘောင်က သေးသေးလေးပဲမို့ flex: 1 ပေးထားတယ် */
+.order-summary-section {
+    flex: 1;
+    background-color: #f9f9f9;  /* နောက်ခံ အရောင်နုနုလေး */
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    position: relative; /* ဒါက အရေးကြီးဆုံးပါ၊ ဒါမှ ပုံက ဒီအကွက်ထဲကနေ အပြင်မထွက်မှာပါ */
+    overflow: hidden;   /* ပုံက ဘောင်အပြင်ထွက်နေရင် ဖြတ်ချင်ရင် ဒါလေးထည့်ပါ */
+    /* ကျန်တဲ့ background-color, padding စတာတွေက အရင်အတိုင်း ထားပါ */
+}
+
+/* --- ဘယ်ဘက် (Cart Item) အလှဆင်ခြင်း --- */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.clear-cart {
+    color: gray;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* --- ညာဘက် (Order Summary) အလှဆင်ခြင်း --- */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.total-row {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #e67e22; /* လိမ္မော်ရောင် */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #d35400;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: gray;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.leaf-decoration {
+    position: absolute;
+    top: -10px;         /* အပေါ်ထောင့်ကို ကပ်တာ (အောက်ထောင့်ဆို bottom: 0; ပြောင်းပါ) */
+    right: -10px;       /* ညာဘက်ထောင့်ကို ကပ်တာ */
+    width: 80px;        /* ပုံရဲ့ အရွယ်အစားကို လိုသလို ညှိပါ */
+    z-index: 0;         /* စာတွေရဲ့ အနောက်ကို ပို့ထားတာပါ */
+    pointer-events: none; /* Mouse ထောက်လို့ မရအောင် ပိတ်ထားတာပါ */
+}
+.order-summary-section h3, 
+.summary-row, 
+.total-row {
+    position: relative;
+    z-index: 2;
+}
+/*shopping page*/
+
+
+
+
+
+/*Brewing-Equipment*/
+.product-section {
+    padding: 50px 8%;
+    text-align: center;
+    background-color: #fdf5e6; /* နောက်ခံအရောင်နုနုလေး */
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #4b2c20;
+}
+
+/* Card တွေကို ဘေးတိုက်စီတာ */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Screen သေးရင် အောက်ဆင်းသွားအောင် */
+}
+
+/* Card တစ်ခုချင်းစီရဲ့ ပုံစံ */
+.product-card {
+    background: white;
+    width: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* အရိပ်လေးထည့်တာ */
+    text-align: left;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Mouse တင်ရင် အပေါ်ကြွလာမယ် */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* ပုံမရှုံ့သွားအောင် */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    color: #4b2c20;
+}
+
+.price {
+    font-weight: bold;
+    color: #6f4e37;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #ffa500;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #4b2c20;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    float: right; /* ညာဘက်ပို့တာ */
+}
+/* Brewing-Equipment */
+
+/* Events and Workshops */
+.events-section {
+    padding: 60px 8%;
+    background-color: #fffaf5; /* နောက်ခံအရောင်နုနုလေး */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #4e342e;
+    margin-bottom: 40px;
+}
+
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    width: 500px; /* Card တစ်ခုချင်းစီရဲ့ အကျယ် */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ရက်စွဲပြတဲ့ အကွက်လေး */
+.event-date {
+    background: #e67e22;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    min-width: 60px;
+    margin-right: 20px;
+}
+
+.event-date span {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.event-info h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.event-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.event-info .time {
+    font-size: 13px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.join-btn {
+    margin-left: auto;
+    padding: 10px 20px;
+    background: #4e342e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.join-btn:hover {
+    background: #3e2723;
+}
+/*Events and Workshops*/
+
+
+
+
+
+/*Special Offers and Subscriptions*/
+/* Offers Section Styling */
+.special-section {
+    padding: 60px 8%;
+    background-color: #fdfaf7;
+}
+
+/* Offer Banner */
+.offer-banner {
+    background: linear-gradient(135deg, #4e342e, #a1887f);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.offer-content span {
+    background: #e67e22;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.offer-content h3 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.claim-btn {
+    padding: 12px 25px;
+    background: white;
+    color: #4e342e;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Subscription Cards */
+.subscription-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.sub-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.sub-card.popular {
+    border: 2px solid #e67e22;
+    transform: scale(1.05); /* ပိုအရေးကြီးတဲ့ plan ကို အနည်းငယ် ပိုကြီးအောင်လုပ်တာပါ */
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e67e22;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #4e342e;
+}
+
+.price span {
+    font-size: 14px;
+    color: #888;
+}
+
+.sub-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.sub-card li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #555;
+}
+
+.sub-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4e342e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sub-btn:hover {
+    background: #e67e22;
+}
+/*Special Offers and Subscriptions*/
+
+/*basket logo shopping card*/
+#cart-count {
+    position: absolute;
+    top: -5px;         /* ခြင်းတောင်းရဲ့ အပေါ်ထောင့်မှာ ကပ်ဖို့ */
+    right: -8px;       /* ညာဘက်ထောင့်မှာ ကပ်ဖို့ */
+    background-color: #ff4d4d; 
+    color: white;
+    
+    /* အရွယ်အစားကို အခုလို အသေကန့်သတ်လိုက်ပါ */
+    width: 10px;       /* အဝိုင်းရဲ့ အကျယ် */
+    height: 10px;      /* အဝိုင်းရဲ့ အမြင့် */
+    font-size: 9px;    /* ဂဏန်းအရွယ်အစားကိုလည်း လျှော့ထားတယ် */
+    
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px solid white; /* အဖြူရောင်ဘောင်လေးက ပိုပေါ်စေတယ် */
+    line-height: 1;    /* စာသားကို အလယ်မှာ ကွက်တိဖြစ်စေဖို့ */
+}
+/*basket logo shopping card*/
+
+
+/*slide transfer */
+/* Page အသစ် စဖွင့်ချိန်မှာ Slide ဝင်လာမယ့် Animation */
+body {
+    animation: fadeInSlide 0.6s ease-out;
+    overflow-x: hidden; /* ဘေးကို slide လုပ်တဲ့အခါ scroll bar မပေါ်အောင် */
+
+    
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(100px); /* ညာဘက်ကနေ ဝင်လာမယ် */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Page ကနေ ထွက်သွားချိန်မှာ သုံးဖို့ Slide Out Class */
+.page-exit {
+    animation: fadeOutSlide 0.5s ease-in forwards;
+}
+
+@keyframes fadeOutSlide {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100px); /* ဘယ်ဘက်ကို ထွက်သွားမယ် */
+    }
+}
+
+/*slide transfer*/
+
+/*photo upload leaf*/
+
+/* စာသားနဲ့ ပုံကို ဘေးချင်းယှဉ်စေတာ */
+.title-with-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* စာနဲ့ ပုံ ကြားအကွာအဝေး */
+}
+
+/* အရွက်ပုံရဲ့ အရွယ်အစား */
+.leaf-icon {
+    width: 80px;  /* မင်းစိတ်ကြိုက် ပြင်နိုင်တယ် */
+    height: auto;
+}
+
+/* ညာဘက်က အရွက်ကို ပြောင်းပြန်လှန်တာ */
+.mirror {
+    transform: scaleX(-1);
+}
+
+/* Mobile မှာ အရမ်းကြီးနေရင် သေးပေးဖို့ */
+@media (max-width: 600px) {
+    .leaf-icon {
+        width: 40px;
+    }
+    .title-with-icons {
+        gap: 10px;
+    }
+}
+/*photo upload leaf*/
+
+/*photo upload coffee cartoon */
+
+/* Paragraph နဲ့ icon ကို ဘေးချင်းယှဉ်စေတာ */
+.desc-with-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;      /* စာနဲ့ ပုံ ကြားအကွာအဝေး */
+    margin: 20px 0; /* အပေါ်အောက် အကွာအဝေး */
+}
+
+/* စာသားပုံစံ (မူရင်းအတိုင်း) */
+.desc-with-icons p {
+    margin: 0;
+    max-width: 600px; /* စာသားကို အရမ်းမရှည်သွားအောင် ထိန်းတာ */
+    text-align: center;
+}
+
+/* စာသားဘေးက အရွက်ပုံစံ (ခေါင်းစဉ်ကထက် သေးရမယ်) */
+.small-leaf-icon {
+    width: 40px;      /* အရွယ်အစားကို စိတ်ကြိုက်လျှော့နိုင်သည် */
+    height: auto;
+    opacity: 0.8;     /* နည်းနည်းလေး မှိန်ထားချင်ရင် */
+}
+
+/* ညာဘက်က အရွက်ကို ပြောင်းပြန်လှန်တာ */
+.mirror {
+    transform: scaleX(-1);
+}
+
+/* Mobile မှာ အရမ်းကျပ်မသွားအောင် ပုံကို သေးလိုက်တာ */
+@media (max-width: 600px) {
+    .small-leaf-icon {
+        width: 25px;
+    }
+}
+/*photo upload coffee cartoon */
+
+/* search bar*/
+
+/* Search Box Styling */
+/* --- Navigation Bar --- */
+
+.cart-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#cart-count {
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 11px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* --- Search & Title Wrapper (ဒီအပိုင်းက အဓိကပဲ) --- */
+.title-search-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto 30px;
+    padding: 0 40px;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 32px;
+    color: #4e342e;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.search-box-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 250px; /* Search bar ကို နည်းနည်း ပိုကျယ်အောင် လုပ်ထားတယ် */
+    font-size: 15px;
+}
+
+.search-icon {
+    color: #6f4e37;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* --- Product Grid --- */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.price {
+    font-weight: bold;
+    color: #6f4e37;
+    font-size: 20px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 12px 0 20px;
+    line-height: 1.5;
+    height: 45px; /* စာကြောင်းအရှည်ညီအောင် ထိန်းထားတာ */
+    overflow: hidden;
+}
+
+/* --- Add to Cart Button --- */
+.add-to-cart {
+    width: 100%;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #4e342e;
+}
+
+/* --- Login Button --- */
+.login-btn {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: white;
+}
+
+/*search bar*/
+
+/* search bar 2*/
+/* ခေါင်းစဉ်နဲ့ Search bar ကို ထိန်းချုပ်မယ့် Container */
+.selection-header {
+    display: flex;
+    justify-content: space-between; /* တစ်ခုကို ဘယ်၊ တစ်ခုကို ညာ ပို့မယ် */
+    align-items: center;            /* အပေါ်အောက် အလယ်တည့်တည့် တန်းစီမယ် */
+    padding: 30px 10%;              /* ဘေးကနေ ၁၀ ရာခိုင်နှုန်းစီ ခွာထားမယ် */
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: nowrap;              /* Screen သေးလည်း အောက်ကို ဆင်းမသွားအောင် */
+}
+
+/* ခေါင်းစဉ်စာလုံး ပုံစံ */
+.section-title {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #4e342e;                 /* Coffee Brown အရောင် */
+    white-space: nowrap;            /* စာကြောင်း မဆင်းသွားအောင် */
+}
+
+/* Search bar တစ်ခုလုံးရဲ့ ပုံစံ */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50px;            /* ဝိုင်းဝိုင်းလေး ဖြစ်အောင် */
+    padding: 5px 20px;
+    width: 300px;                   /* Search bar အကျယ် */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/*search bar2*/
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50px;            /* ဝိုင်းဝိုင်းလေး ဖြစ်အောင် */
+    padding: 5px 20px;
+    width: 300px;                   /* Search bar အကျယ် */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+/* event and Workshop*/
+
+        /* Workshop Page အတွက် သီးသန့် CSS Prototype */
+        .event-section { padding: 50px 5%; text-align: center; }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+            text-align: left;
+        }
+
+        .event-card:hover { transform: translateY(-10px); }
+
+        .event-img { width: 100%; height: 200px; object-fit: cover; }
+
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #6d4c41;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .event-content { padding: 20px; }
+        .event-content h3 { margin: 0 0 10px 0; color: #333; }
+        .event-content p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+
+        .event-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .event-price { font-weight: bold; color: #6d4c41; font-size: 1.1rem; }
+        .join-btn {
+            background: #1a237e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .join-btn:hover { background: #0d1440; }
+    
+/* event and Workshop*/
+
+        /* ၁။ Navigation Bar (ပုံထဲကအတိုင်း တစ်ကြောင်းတည်းဖြစ်စေရန်) */
+        body {
+            background-color: #fdfaf5;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .container-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 3%;
+            background-color: #e6d5b8; /* ပုံထဲကအတိုင်း အရောင်နုလေး */
+            width: 100%;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            min-width: fit-content;
+        }
+
+        .nav-links-1 {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links-1 li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Cart Badge ကို relative container ထဲထည့်ထားလို့ နေရာမှန်သွားပါပြီ */
+        .cart-wrapper {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #cart-count {
+            background: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-weight: bold;
+            border: 1.5px solid #e6d5b8;
+        }
+
+        .login-btn {
+            background: none;
+            border: 1px solid #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        /* ၂။ Header ပိုင်း */
+        .event-header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* ၃။ Card Layout (မထပ်အောင် Flexbox သုံးထားသည်) */
+        .event-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: white;
+            width: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .event-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-date-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #6d4c41;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .event-info {
+            padding: 20px;
+        }
+
+        .title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .title-price h3 { margin: 0; font-size: 1.2rem; color: #3e2723; }
+        .price { font-weight: bold; color: #6d4c41; font-size: 1.1rem; }
+
+        .event-info p {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            height: 45px;
+            overflow: hidden;
+        }
+
+        .join-btn {
+            width: 100%;
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            background-color: #0d1440;
+        }
+
+        @media (max-width: 768px) {
+            .event-card { width: 100%; }
+        }
+    
+        /*  special offer and subscriptions*/
+         
+        /* ၁။ Navigation Bar (မင်းရဲ့ အရင် page တွေနဲ့ ညီအောင်) */
+        body {
+            background-color: #fdfaf5;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .container-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 3%;
+            background-color: #e6d5b8;
+            width: 100%;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 20px; font-weight: bold; color: #333; }
+
+        .nav-links-1 {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links-1 li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+
+        .cart-wrapper { position: relative; cursor: pointer; }
+        #cart-count {
+            background: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        /* ၂။ Section Headers */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: #3e2723;
+        }
+
+        /* ၃။ Special Offers Cards */
+        .offers-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 0 5% 50px;
+        }
+
+        .offer-card {
+            background: #fff;
+            width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            border: 2px dashed #6d4c41;
+        }
+
+        .discount-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #d32f2f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .offer-info { padding: 20px; text-align: center; }
+        .promo-code {
+            background: #f3e5f5;
+            padding: 8px;
+            display: block;
+            margin: 10px 0;
+            border: 1px dashed #1a237e;
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        /* ၄။ Subscription Plans (စျေးနှုန်းဇယားပုံစံ) */
+        .sub-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            background-color: #f3e5f5;
+            padding: 60px 5%;
+        }
+
+        .sub-card {
+            background: white;
+            width: 280px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+        }
+
+        .sub-card.popular {
+            border: 2px solid #6d4c41;
+            transform: scale(1.05);
+        }
+
+        .sub-price { font-size: 2rem; font-weight: bold; color: #6d4c41; }
+        .sub-price span { font-size: 1rem; color: #777; }
+
+        .sub-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .sub-features li { margin-bottom: 10px; color: #555; }
+        .sub-features li i { color: green; margin-right: 10px; }
+
+        .sub-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background: #1a237e;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    /*special offer and subscriptions */
+
+    /*event and workshop register*/
+    /* Modal (Background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); /* နောက်ခံကို မှောင်လိုက်တာ */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px; top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#regForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+    /*event and workshop register*/
+
+
+    /*step by step explaiin */
+    /* Coffee Journey Styling */
+.coffee-journey {
+    padding: 60px 20px;
+    background-color: #fdfdfd;
+    text-align: center;
+}
+
+.journey-title {
+    color: #6d4c41;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.journey-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.journey-step {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* မျဉ်းရိပ်လေးနဲ့ ကြွစေတာ */
+    transition: transform 0.3s ease;
+}
+
+.journey-step:hover {
+    transform: translateX(10px); /* Mouse တင်ရင် ဘေးကို နည်းနည်းရွေ့တာ */
+}
+
+.step-img img {
+    width: 100px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.step-text {
+    text-align: left;
+}
+
+.step-text h3 {
+    margin: 0 0 5px 0;
+    color: #6d4c41;
+}
+
+.step-text p {
+    margin: 0;
+    color: #777;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile အတွက် ဖုန်းနဲ့ကြည့်ရင် အဆင်ပြေအောင် */
+@media (max-width: 600px) {
+    .journey-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    .step-img img {
+        margin: 0 0 15px 0;
+    }
+    .step-text {
+        text-align: center;
+    }
+}
+ /*step by step explaiin */
+
+ /* home page */
+ 
+
+ /*image sligth*/
+
+ .promo-slider {
+    padding: 50px 0;
+    background-color: #fdfaf7; /* နောက်ခံအရောင်ဖျော့ဖျော့ */
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px; /* Slider အကျယ် */
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease;
+    opacity: 0.5; /* ဘေးပုံတွေကို မှိန်ထားမယ် */
+    transform: scale(0.85); /* ဘေးပုံတွေကို သေးထားမယ် */
+}
+
+/* အလယ်ပုံကို လင်းစေပြီး ကြီးစေခြင်း */
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 20px 40px rgba(109, 76, 65, 0.3);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ပုံပေါ်က စာသား Style */
+.promo-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.promo-content h3 { margin: 5px 0 0; font-size: 24px; }
+
+/* အစက်လေးတွေရဲ့ အရောင် */
+.swiper-pagination-bullet-active {
+    background: #6d4c41 !important;
+}
+
+/*image slide*/

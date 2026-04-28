@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Selection</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+</head>
+<body>
+       <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-Offers-and-subscriptions.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+    <section class="product-section">
+        <div class="title-search-wrapper">
+            <h2 class="section-title">OUR BEST CHOICE</h2>
+            <div class="search-box-container">
+                <input type="text" placeholder="Search coffee name..." id="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+        <div id="product-list" class="product-container"></div>
+    </section>
+
+    <script>
+        const coffeeProducts = [
+            { name: "Americano", price: "$2.00", img: "(product) americano.jpg", desc: "Smooth espresso diluted with water." },
+            { name: "Espresso", price: "$2.00", img: "(product)Espresso.jpg", desc: "Strong and concentrated shot." },
+            { name: "Ristretto", price: "$2.00", img: "(product)ristretto.jpg", desc: "Short and powerful coffee." },
+            { name: "Doppio", price: "$2.00", img: "(product)Doppio.jpg", desc: "Double shot of pure espresso." },
+            { name: "Lungo", price: "$2.00", img: "Lungo.jpg", desc: "A long shot of espresso with double the water." },
+            { name: "Cappuccino", price: "$2.00", img: "Cappuccino.jpg", desc: "Equal parts espresso, steamed milk, and milk foam." },
+            { name: "Latte", price: "$2.00", img: "Latte.jpg", desc: "Espresso with steamed milk and foam." },
+            { name: "Mocha", price: "$2.00", img: "Mocha.jpg", desc: "Coffee mixed with chocolate syrup." },
+            { name: "Red Eye", price: "$2.00", img: "Red Eye.jpg", desc: "Drip coffee with an added shot of espresso." },
+            { name: "Cold Brew", price: "$2.00", img: "Cold Brew.jpg", desc: "Coffee grounds steeped in cold water." }
+        ];
+
+        const productList = document.getElementById('product-list');
+        const searchInput = document.getElementById('search-input');
+
+        function displayProducts(items) {
+            productList.innerHTML = ""; 
+            items.forEach(product => {
+                productList.innerHTML += `
+                    <div class="product-card">
+                        <img src="${product.img}" alt="${product.name}">
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <span class="price">${product.price}</span>
+                        </div>
+                        <p>${product.desc}</p>
+                        <button class="add-to-cart" onclick="addToCart('${product.name}', '${product.price}', '${product.img}')">ADD TO CART</button>
+                    </div>`;
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const value = e.target.value.toLowerCase();
+            const filtered = coffeeProducts.filter(item => item.name.toLowerCase().includes(value));
+            displayProducts(filtered);
+        });
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+            let total = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = total;
+            document.getElementById('cart-count').style.display = total > 0 ? "inline-block" : "none";
+        }
+
+        function addToCart(name, priceStr, image) {
+            const price = parseFloat(priceStr.replace('$', ''));
+            let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+            let existing = cart.find(i => i.name === name);
+            if (existing) { existing.quantity++; } else { cart.push({ name, price, image, quantity: 1 }); }
+            localStorage.setItem('myCoffeeCart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        window.onload = () => { displayProducts(coffeeProducts); updateCartCount(); };
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Coffee Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="homepagestyle.css">
+    <link rel="stylesheet" href="home.css">
+    
+    <style>
+        /* Slider အတွက် လိုအပ်တဲ့ Style အနည်းငယ် ဒီမှာ ထည့်ပေးထားတယ် */
+        .promo-slider { padding: 50px 0; background-color: #fdfaf7; }
+        .swiper { width: 100%; padding-top: 50px; padding-bottom: 50px; }
+        .swiper-slide { 
+            background-position: center; background-size: cover; 
+            width: 300px; height: 300px; border-radius: 20px; 
+            overflow: hidden; opacity: 0.4; transition: 0.3s;
+        }
+        .swiper-slide-active { opacity: 1; transform: scale(1.2); z-index: 10; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .promo-content {
+            position: absolute; bottom: 20px; left: 20px; color: white;
+            background: rgba(0,0,0,0.5); padding: 10px; border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container-1">
+        <div class="logo">Coffee Shop</div>
+        <ul class="nav-links-1">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product.html">Coffee selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="event-workshops.html">Event and Workshops</a></li>
+            <li><a href="special-offers.html">Special Offer</a></li>
+            <li class="cart-wrapper">
+                <a href="shopping.html">
+                    <img src="shopping-card-logo.png" class="nav-links" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </li> 
+        </ul>
+        <a href="login.html" class="login-btn">Sign in / Register</a>
+    </nav>
+
+    <div class="item-1">
+        <div class="title-with-icons">
+            <img src="coffee-leaf.png" class="leaf-icon" alt="Coffee leaf decoration">
+            <h1>Wake Up to Freshly<br>Roasted Coffee</h1>
+            <img src="coffee-leaf.png" class="leaf-icon mirror" alt="Coffee leaf decoration">
+        </div>
+
+        <section class="promo-slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="(product)Espresso.jpg" alt="Promo 1">
+                        <div class="promo-content"><span>Limited Offer</span><h3>Buy 1 Get 1</h3></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="(Home page)bc55e343c19d4a412b8a1ebdfd6c6950-removebg-preview.png" alt="Promo 2">
+                        <div class="promo-content"><span>New Arrival</span><h3>Special Arabica</h3></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="Cappuccino.jpg" alt="Promo 3">
+                        <div class="promo-content"><span>Member Only</span><h3>20% Discount</h3></div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <div class="desc-with-icons">
+            <img src="coffee_cartoon-removebg-preview.png" class="small-leaf-icon" alt="Coffee cartoon character">
+            <p>The finest selection of artisan coffee beans roasted to perfection.</p>
+            <img src="coffee_cartoon-removebg-preview.png" class="small-leaf-icon mirror" alt="Coffee cartoon character">
+        </div>
+        <a href="Product.html" class="shop-now-btn">Shop now</a>    
+    </div>
+
+    <section class="coffee-journey">
+        <h2 class="journey-title">The Journey of Our Beans</h2>
+        <div class="journey-container">
+            <div class="journey-step">
+                <div class="step-img"><img src="step1.png" alt="Harvesting"></div>
+                <div class="step-text"><h3>Step 1: Harvesting</h3><p>Only the finest ripe cherries are selected.</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-img"><img src="step2.png" alt="Raking"></div>
+                <div class="step-text"><h3>Step 2: Drying</h3><p>Beans are sun-dried to perfection.</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-img"><img src="step3.png" alt="Processing"></div>
+                <div class="step-text"><h3>Step 3: Quality Sorting</h3><p>Each bean is meticulously sorted.</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-img"><img src="step4.png" alt="Roasting"></div>
+                <div class="step-text"><h3>Step 4: Artisan Roasting</h3><p>Roasted to unlock rich aroma.</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-img"><img src="step5.png" alt="Storage"></div>
+                <div class="step-text"><h3>Step 5: Freshness</h3><p>Stored in airtight conditions.</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-img"><img src="step6.png" alt="Brewing"></div>
+                <div class="step-text"><h3>Step 6: The Perfect Brew</h3><p>Ready to be served at your table.</p></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="location-map">
+        <h2 style="text-align: center; margin: 20px 0;">Find Us Here</h2>
+        <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d731.4164871200633!2d96.12231126730083!3d16.861688441123725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195ccd8d01b41%3A0x13b2b10023ec1fed!2sNetworking%20%26%20Information%20Technology%20(NiT)%20Training%20Center!5e1!3m2!1sen!2smm!4v1777350725399!5m2!1sen!2smm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h4 class="footer-logo">Coffee Shop</h4>
+                <p>Experience the craft of artisan coffee, from bean to cup.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Our Menu</h4>
+                <ul>
+                    <li><a href="#">Mocha Coffee</a></li>
+                    <li><a href="#">Espresso Coffee</a></li>
+                    <li><a href="#">Latte Art</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="shopping-price.js"></script>
+
+<script>
+    // ၁။ Swiper Slider Initialization (တစ်ခုတည်းပဲ ထားရပါမယ်)
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true, 
+        autoplay: {
+            delay: 1000, // ၁စက္ကန့်တစ်ခါ အလိုအလျောက် ရွေ့မယ်
+            disableOnInteraction: false, // Mouse နဲ့ ထိလိုက်လည်း ဆက်ရွေ့နေမယ်
+        },
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    // ၂။ Cart Count Function (ဈေးဝယ်ခြင်းဆိုင်ရာ Function)
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('myCoffeeCart')) || [];
+        let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+        let countElement = document.getElementById('cart-count');
+        if (countElement) {
+            countElement.innerText = totalCount;
+            countElement.style.display = totalCount > 0 ? "flex" : "none";
+        }
+    }
+
+    // စာမျက်နှာပွင့်တာနဲ့ Cart အရေအတွက်ကို Update လုပ်မယ်
+    window.addEventListener('load', updateCartCount);
+</script>
+</body>
+</html>
